@@ -2,9 +2,9 @@ name: Vitest CI
 
 on:
   push:
-    branches: [ "test" ]
   pull_request:
-    branches: [ "test" ]
+  merge_group:
+    branches: [ "main", "test" ]
 
 jobs:
   test-and-verify:
