@@ -19,7 +19,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: ${{ matrix.mp}}
           cache: 'npm' # This speeds up subsequent runs!
 
       # 3. Clean Install Dependencies
@@ -27,7 +27,4 @@ jobs:
         # 'npm ci' is faster and stricter than 'npm install' for CI
         run: npm ci
 
-      # 4. Run Vitest
-      - name: Run Vitest
-        # crucial: use 'run' to disable watch mode
-        run: npm run test:ci
+      
