@@ -1,13 +1,12 @@
 name: My First Workflow
 
-on: 
-  push:
-  pull_request:
-  branches: [main]
+# 1. The Trigger
+on: [push]
 
+# 2. The Job
 jobs:
   say-hello:
     runs-on: ubuntu-latest
-    stesps:
+    steps:
       - name: Print a greeting
-        run: echo "Hello! The workflow worked"
+        run: echo "Hello! The workflow worked."
