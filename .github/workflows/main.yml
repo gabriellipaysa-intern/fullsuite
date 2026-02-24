@@ -1,12 +1,30 @@
-name: My First Workflow
+name: Vitest CI
 
-on: 
+on:
   push:
+    branches: [ "test" ]
   pull_request:
-    branches: [main, test]
+    branches: [ "test" ]
+
 jobs:
-  say-hello:
+  test-and-verify:
     runs-on: ubuntu-latest
+    
     steps:
-      - name: Print a greeting
-        run: echo "Hello! The workflow worked"
+      # 1. Get the code
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      # 2. Install Node.js
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.mp}}
+          cache: 'npm' # This speeds up subsequent runs!
+
+      # 3. Clean Install Dependencies
+      - name: Install Dependencies
+        # 'npm ci' is faster and stricter than 'npm install' for CI
+        run: npm ci
+
+      

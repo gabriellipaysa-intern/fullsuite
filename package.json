@@ -1,0 +1,27 @@
+{
+  "name": "test-repo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gabriellipaysa-intern/test-repo.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/gabriellipaysa-intern/test-repo/issues"
+  },
+  "homepage": "https://github.com/gabriellipaysa-intern/test-repo#readme",
+  "dependencies": {
+    "node": "^25.6.1"
+  },
+  "devDependencies": {
+    "vitest": "^4.0.18"
+  }
+}
